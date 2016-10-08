@@ -1,0 +1,259 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <title>Wilks Calculator</title>    
+    <meta charset="utf-8">
+
+    <meta name="description" content="Wilks Calculator">
+    <meta name="author" content="Evelijn Saaltink">
+    <meta name="viewport" content="width=device-width user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui">
+    
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+    
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.deep_purple-purple.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    
+    <!-- header part of the tools page -->
+    
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+            <!-- Title -->
+                <span class="mdl-layout-title">Powerlifting Tools</span>
+            </div>
+            <!-- Tabs -->
+            <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+                <a href="#fixed-tab-1" id="wilks-tabname" class="mdl-layout__tab is-active">Wilks Calculator</a>
+                <a href="#fixed-tab-2" id="rm-tabname" class="mdl-layout__tab">Rep Max Calculator</a>
+                <a href="#fixed-tab-3" id="percent-tabname" class="mdl-layout__tab">Percentage Calculator</a>
+            </div>
+        </header>
+      
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">Powerlifting</span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="">Tools</a>
+                <a class="mdl-navigation__link" href="">My lifts</a>
+                <a class="mdl-navigation__link" href="">Ranking</a>
+                <a class="mdl-navigation__link" href="">National Ranking</a>
+            </nav>
+        </div>
+        
+        <!-- Body part of the tools page -->
+        
+        <main class="mdl-layout__content" id="content">
+            
+            <!-- Wilks calculator -->
+            
+            <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
+                <div class="page-content" id="wilks-tab">
+                    <div class="mdl-grid" id="wilks-template">
+                        <div class="mdl-cell mdl-cell--5-col"></div>
+                        <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-phone" id="wilks-container">
+                            <h5 class="mdl-typography--title">Wilks Calculator</h5>
+                            <form>
+                                <div id="radio-buttons">
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" id="male-label" for="male">
+                                        <input type="radio" id="male" class="mdl-radio__button" name="gender" value="male" onchange="calcWilks(calcTotal())" checked>
+                                        <span class="mdl-radio__label">Male</span>
+                                    </label>
+
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="female" id="female-label">
+                                        <input type="radio" id="female" class="mdl-radio__button" name="gender" value="female" onchange="calcWilks(calcTotal())">
+                                        <span class="mdl-radio__label">Female</span>
+                                    </label>
+                                </div>
+
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" id="squat" type="text" name="squat" value="" onchange="calcTotal();" onkeypress="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();" />
+                                    <label class="mdl-textfield__label" for="squat">Squat</label>
+                                </div>
+
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" id="bench" type="text" name="bench" value="" onchange="calcTotal();"    onkeypress="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();" />
+                                    <label class="mdl-textfield__label" for="bench">Bench</label>
+                                </div>
+
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" id="deadlift" type="text" value="" name="deadlift" onchange="calcTotal()" onkeypress="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();" />
+                                    <label class="mdl-textfield__label" for="deadlift">Deadlift</label>
+                                </div>
+
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" id="bodyweight" type="text" name="bodyweight" onchange="calcWilks(calcTotal())" onkeypress="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();" value="" />
+                                    <label class="mdl-textfield__label" for="bodyweight">Bodyweight</label>
+                                </div>
+
+                                <div id="total-wilks-labels">
+                                    <label id="total-label"><span id="total-label-text">Total: </span><span id="totalWeight">0</span></label>
+                                    <label id="wilks-label"><span id="wilks-label-text">Wilks: </span><span id="wilks">0</span></label>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="mdl-cell mdl-cell--5-col"></div>
+                    </div> 
+                </div>
+            </section>
+            
+            <!-- RM Calculator -->
+            
+            <section class="mdl-layout__tab-panel" id="fixed-tab-2">
+                <div class="page-content" id="rm-tab">
+                    <div class="mdl-grid" id="rm-template">
+                        <div class="mdl-cell mdl-cell--2-col-phone"></div>
+                            <div class="mdl-cell mdl-cell--6-col-phone" id="rm-container">
+                                <div id="rm-form">
+                                    <form>
+                                        <h5 class="mdl-typography--title">Brzycki's RM Calculator</h5>
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="weight-div">     
+
+                                            <input class="mdl-textfield__input" id="rm-weight" type="text" name="rm-weight" value="" onchange="calc1RM();" onkeypress="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();" />
+                                            <label class="mdl-textfield__label" for="rm-weight">Weight</label>
+                                        </div>
+
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="reps-div">     
+                                            <input class="mdl-textfield__input" id="rm-reps" type="text" name="rm-reps" value="" onchange="calc1RM();"    onkeypress="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();" />
+                                            <label class="mdl-textfield__label" for="rm-reps">Reps</label>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div id="tableviews">
+                                    <table class="mdl-data-table mdl-js-data-table">
+                                        <thead>
+                                            <tr>
+                                                <th>1RM</th>
+                                                <th>2RM</th>
+                                                <th>3RM</th>
+                                                <th>4RM</th>
+                                                <th>5RM</th>
+                                                <th>6RM</th>
+                                                <th>7RM</th>
+                                                <th>8RM</th>
+                                                <th>9RM</th>
+                                                <th>10RM</th>
+                                                <th>11RM</th>
+                                                <th>12RM</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td id="1RM">0</td>
+                                                <td id="2RM">0</td>
+                                                <td id="3RM">0</td>
+                                                <td id="4RM">0</td>
+                                                <td id="5RM">0</td>
+                                                <td id="6RM">0</td>
+                                                <td id="7RM">0</td>
+                                                <td id="8RM">0</td>
+                                                <td id="9RM">0</td>
+                                                <td id="10RM">0</td>
+                                                <td id="11RM">0</td>
+                                                <td id="12RM">0</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        <div class="mdl-cell mdl-cell--4-col-phone"></div>
+                    </div> 
+                </div>
+            </section>
+            
+            <!-- Percentage calculator -->
+            
+            <section class="mdl-layout__tab-panel" id="fixed-tab-3">
+                <div class="page-content" id="percent-tab">
+                    <div class="mdl-grid" id="percent-template">
+                        <div class="mdl-cell mdl-cell--2-col-phone"></div>
+                            <div class="mdl-cell mdl-cell--6-col-phone" id="percent-container">
+                                <div id="rm-form">
+                                    <form>
+                                        <h5 class="mdl-typography--title">Percentage Calculator</h5>
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="weight-div">     
+
+                                            <input class="mdl-textfield__input" id="percent-weight" type="text" name="percent-weight" value="" onchange="calcPercentage();" onkeypress="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();" />
+                                            <label class="mdl-textfield__label" for="percent-weight">Weight</label>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div id="tableviews">
+                                    <table class="mdl-data-table mdl-js-data-table">
+                                        <thead>
+                                            <tr>
+                                                <th>100%</th>
+                                                <th>95%</th>
+                                                <th>90%</th>
+                                                <th>85%</th>
+                                                <th>80%</th>
+                                                <th>75%</th>
+                                                <th>70%</th>
+                                                <th>65%</th>
+                                                <th>60%</th>
+                                                <th>55%</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td id="100P">0</td>
+                                                <td id="95P">0</td>
+                                                <td id="90P">0</td>
+                                                <td id="85P">0</td>
+                                                <td id="80P">0</td>
+                                                <td id="75P">0</td>
+                                                <td id="70P">0</td>
+                                                <td id="65P">0</td>
+                                                <td id="60P">0</td>
+                                                <td id="55P">0</td>
+                                            </tr>
+                                        </tbody>
+                                        <thead>
+                                            <tr>
+                                                <th>50%</th>
+                                                <th>45%</th>
+                                                <th>40%</th>
+                                                <th>35%</th>
+                                                <th>30%</th>
+                                                <th>25%</th>
+                                                <th>20%</th>
+                                                <th>15%</th>
+                                                <th>10%</th>
+                                                <th>5%</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td id="50P">0</td>
+                                                <td id="45P">0</td>
+                                                <td id="40P">0</td>
+                                                <td id="35P">0</td>
+                                                <td id="30P">0</td>
+                                                <td id="25P">0</td>
+                                                <td id="20P">0</td>
+                                                <td id="15P">0</td>
+                                                <td id="10P">0</td>
+                                                <td id="5P">0</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        <div class="mdl-cell mdl-cell--4-col-phone"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    
+    <script src="js/html-import.js"></script>
+    <script src="js/script.js"></script>
+    <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+</body>
+</html>

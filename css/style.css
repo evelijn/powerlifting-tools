@@ -1,0 +1,28 @@
+#wilks-container, #rm-form {
+    position: relative;
+}
+
+#radio-buttons {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+#male-label, #female-label, #total-label, #wilks-label {
+    position: absolute;
+}
+
+#female-label, #wilks-label {
+    right: 0;
+}
+
+#total-wilks-labels {
+    padding-top: 30px;
+}
+
+#total-label-text, #wilks-label-text, #one-rm-label-text {
+    font-weight: bold;
+}
+
+#rm-form {
+    padding-bottom: 40px;
+}
