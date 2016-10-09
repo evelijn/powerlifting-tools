@@ -1,15 +1,3 @@
-if ( $(window).width() > 480) {    
-    $("#wilks-tabname").html("<a class='title' href='/'>LONGTEXTLONGTEXT</a>");
-}
-</script>
-
-<script>
-window.addEventListener('resize', function(event){
-    if ( $(window).width() < 480) {    
-        $(".title").html("<a class='title' href='/'>SHORTTEXT</a>");
-    }
-});
-
 // Calculate the total amount of weight the user has lifted
 var calcTotal = function () {
     // A var for the value of each lift
