@@ -21,7 +21,7 @@ var calcWilks = function (total) {
     var bw = parseFloat(document.getElementById('bodyweight').value);
     var result;
     
-    // Checks which radio button is checked
+    // Checks wether the female button or male button is checked
     if (document.getElementById('female').checked) {
         // Calculate the Wilks score for female lifters
         result = (total * (500 / (594.31747775582 + -27.23842536447 * bw + 0.82112226871 * Math.pow(bw, 2) + -0.00930733913 * Math.pow(bw, 3) + 0.00004731582 * Math.pow(bw, 4) + -0.00000009054 * Math.pow(bw, 5)))).toFixed(2);
@@ -30,7 +30,7 @@ var calcWilks = function (total) {
         result = (total * (500 / (-216.0475144 + 16.2606339 * bw + -0.002388645 * Math.pow(bw, 2) + -0.00113732 * Math.pow(bw, 3) + 0.00000701863 * Math.pow(bw, 4) + -0.00000001291 * Math.pow(bw, 5)))).toFixed(2);       
     };
     
-    // Check if the Wilks field is NaN
+    // Check if the number in the Wilks field is a proper number
     if (isNaN(result)) {
         document.getElementById('wilks').innerHTML = 0;
     } else {
