@@ -1,3 +1,5 @@
+"use strict";
+
 // Calculate the total amount of weight the user has lifted
 var calcTotal = function () {
     // A var for the value of each lift
