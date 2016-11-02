@@ -1,0 +1,150 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <title>Powerlifting Tools - Rep Max</title>
+    <meta charset="utf-8">
+
+    <meta name="description" content="Wilks Calculator">
+    <meta name="author" content="Evelijn Saaltink">
+    <meta name="viewport" content="width=device-width user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.deep_purple-purple.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/style.css">
+
+	<link rel='shortcut icon' type='image/ico' href='favicon.ico' />
+	<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png" />
+	<link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png" />
+	<link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png" />
+	<link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png" />
+	<link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png" />
+	<link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png" />
+	<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png" />
+	<link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png" />
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png" />
+	<link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png" />
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png" />
+	<link rel="manifest" href="favicon/manifest.json" />
+	<meta name="msapplication-TileColor" content="#ffffff" />
+	<meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png" />
+	<meta name="theme-color" content="#ffffff" />
+</head>
+
+<body>
+
+    <!-- header part of the tools page -->
+
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+            <!-- Title -->
+                <span class="mdl-layout-title">Rep Max</span>
+            </div>
+
+        </header>
+
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">Powerlifting Tools</span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="index.html">Wilks</a>
+                <a class="mdl-navigation__link" href="repmax.html">Rep Max</a>
+                <a class="mdl-navigation__link" href="percentages.html">Percentages</a>
+            </nav>
+        </div>
+
+        <!-- Body part of the tools page -->
+
+        <main class="mdl-layout__content">
+
+            <!-- Wilks calculator -->
+
+            <div class="page-content">
+                <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--5-col"></div>
+                        <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-phone">
+                            <div id="rm-form">
+                                <form>
+                                    <h5 class="mdl-typography--title">Brzycki's RM Calculator</h5>
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+
+                                        <input class="mdl-textfield__input" id="rm-weight" type="text" name="rm-weight" value="" onchange="calc1RM();" onkeypress="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();" />
+                                        <label class="mdl-textfield__label" for="rm-weight">Weight</label>
+                                    </div>
+
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                        <input class="mdl-textfield__input" id="rm-reps" type="text" name="rm-reps" value="" onchange="calc1RM();"    onkeypress="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();" />
+                                        <label class="mdl-textfield__label" for="rm-reps">Reps</label>
+                                    </div>
+                                </form>
+                            </div>
+                            <div>
+                                <table class="mdl-data-table mdl-js-data-table">
+                                    <tr>
+                                        <th>1RM</th>
+                                        <td id="1RM">0</td>
+                                    </tr>
+                                    <tr>
+                                        <th>2RM</th>
+                                        <td id="2RM">0</td>
+                                    </tr>
+                                    <tr>
+                                        <th>3RM</th>
+                                        <td id="3RM">0</td>
+                                    </tr>
+                                    <tr>
+                                        <th>4RM</th>
+                                        <td id="4RM">0</td>
+                                    </tr>
+                                    <tr>
+                                        <th>5RM</th>
+                                        <td id="5RM">0</td>
+                                    </tr>
+                                    <tr>
+                                        <th>6RM</th>
+                                        <td id="6RM">0</td>
+                                    </tr>
+                                    <tr>
+                                        <th>7RM</th>
+                                        <td id="7RM">0</td>
+                                    </tr>
+                                    <tr>
+                                        <th>8RM</th>
+                                        <td id="8RM">0</td>
+                                    </tr>
+                                    <tr>
+                                        <th>9RM</th>
+                                        <td id="9RM">0</td>
+                                    </tr>
+                                    <tr>
+                                        <th>10RM</th>
+                                        <td id="10RM">0</td>
+                                    </tr>
+                                    <tr>
+                                        <th>11RM</th>
+                                        <td id="11RM">0</td>
+                                    </tr>
+                                    <tr>
+                                        <th>12RM</th>
+                                        <td id="12RM">0</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    <div class="mdl-cell mdl-cell--5-col"></div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="js/html-import.js"></script>
+    <script src="js/script.js"></script>
+    <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</body>
+</html>

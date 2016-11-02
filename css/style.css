@@ -1,30 +1,27 @@
-#wilks-container, #rm-form {
+#rm-form {
+    position: relative;
+    padding-bottom: 40px;
+}
+
+.container {
     position: relative;
 }
 
-#radio-buttons {
+.radio-buttons-div {
     padding-top: 40px;
     padding-bottom: 40px;
 }
 
-#male-label, #female-label, #total-label, #wilks-label {
+.labels {
     position: absolute;
 }
 
-#female-label, #wilks-label {
+.labels-right {
     right: 0;
 }
 
-#total-wilks-labels {
+.labels-div {
     padding-top: 30px;
-}
-
-#total-label-text, #wilks-label-text, #one-rm-label-text {
-    font-weight: bold;
-}
-
-#rm-form {
-    padding-bottom: 40px;
 }
 
 .mdl-data-table th {

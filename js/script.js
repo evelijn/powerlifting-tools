@@ -11,7 +11,7 @@ var calcTotal = function () {
     var total = parseFloat(squat) + parseFloat(bench) + parseFloat(deadlift);
     
     // The totalWeight label changes is into total
-    document.getElementById('totalWeight').innerHTML = total;
+    document.getElementById('wTotal').innerHTML = total;
 
     return total;
 };
@@ -21,24 +21,55 @@ var calcWilks = function (total) {
     
     // Var bw contains the bodyweight as filled in by the user
     var bw = parseFloat(document.getElementById('bodyweight').value);
-    var result;
+    var wilks = 0;
     
     // Checks wether the female button or male button is checked
-    if (document.getElementById('female').checked) {
+    if (document.getElementById('female-wilks').checked) {
         // Calculate the Wilks score for female lifters
-        result = (total * (500 / (594.31747775582 + -27.23842536447 * bw + 0.82112226871 * Math.pow(bw, 2) + -0.00930733913 * Math.pow(bw, 3) + 0.00004731582 * Math.pow(bw, 4) + -0.00000009054 * Math.pow(bw, 5)))).toFixed(2);
+        wilks = (total * (500 / (594.31747775582 + -27.23842536447 * bw + 0.82112226871 * Math.pow(bw, 2) + -0.00930733913 * Math.pow(bw, 3) + 0.00004731582 * Math.pow(bw, 4) + -0.00000009054 * Math.pow(bw, 5)))).toFixed(2);
     } else {
         // Calculate the Wilks score for male lifters
-        result = (total * (500 / (-216.0475144 + 16.2606339 * bw + -0.002388645 * Math.pow(bw, 2) + -0.00113732 * Math.pow(bw, 3) + 0.00000701863 * Math.pow(bw, 4) + -0.00000001291 * Math.pow(bw, 5)))).toFixed(2);       
+        wilks = (total * (500 / (-216.0475144 + 16.2606339 * bw + -0.002388645 * Math.pow(bw, 2) + -0.00113732 * Math.pow(bw, 3) + 0.00000701863 * Math.pow(bw, 4) + -0.00000001291 * Math.pow(bw, 5)))).toFixed(2);
     };
     
     // Check if the number in the Wilks field is a proper number
-    if (isNaN(result)) {
+    if (isNaN(wilks)) {
         document.getElementById('wilks').innerHTML = 0;
     } else {
-        document.getElementById('wilks').innerHTML = result;
+        document.getElementById('wilks').innerHTML = wilks;
     };
 };
+
+var calcTotalReversed = function() {
+
+    var bw = parseFloat(document.getElementById('totalBodyweight').value);
+    var wilks = parseFloat(document.getElementById('totalWilks').value);
+    var total = 0;
+
+    if (document.getElementById('female-total').checked) {
+        // Calculate the Wilks score for female lifters
+        total = (wilks / (500 / (594.31747775582 + -27.23842536447 * bw + 0.82112226871 * Math.pow(bw, 2) + -0.00930733913 * Math.pow(bw, 3) + 0.00004731582 * Math.pow(bw, 4) + -0.00000009054 * Math.pow(bw, 5)))).toFixed(2);
+    } else {
+        // Calculate the Wilks score for male lifters
+        total = (wilks / (500 / (-216.0475144 + 16.2606339 * bw + -0.002388645 * Math.pow(bw, 2) + -0.00113732 * Math.pow(bw, 3) + 0.00000701863 * Math.pow(bw, 4) + -0.00000001291 * Math.pow(bw, 5)))).toFixed(2);
+    };
+
+
+
+    if (isNaN(total)) {
+        document.getElementById('tTotal').innerHTML = 0;
+    } else {
+        document.getElementById('tTotal').innerHTML = total;
+    };
+}
+
+var calcBodyweight = function() {
+    var total = parseFloat(document.getElementById('bodyweightTotal').value);
+    var wilks = parseFloat(document.getElementById('totalWilks').value);
+
+
+}
+
 
 var calc1RM = function () {
     
