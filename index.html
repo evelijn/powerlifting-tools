@@ -49,7 +49,6 @@
             <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
                 <a href="#fixed-tab-1" id="wilks-tabname" class="mdl-layout__tab is-active">Calc Wilks</a>
                 <a href="#fixed-tab-2" id="total-tabname" class="mdl-layout__tab">Calc Total</a>
-                <a href="#fixed-tab-3" id="bodyweight-tabname" class="mdl-layout__tab">Calc Bodyweight</a>
             </div>
         </header>
       
@@ -159,36 +158,7 @@
                     </div> 
                 </div>
             </section>
-            
-            <!-- Percentage calculator -->
-            
-            <section class="mdl-layout__tab-panel" id="fixed-tab-3">
-                <div class="page-content">
-                    <div class="mdl-grid">
-                        <div class="mdl-cell mdl-cell--5-col"></div>
-                            <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-phone" id="percent-container">
-                                <div>
-                                    <form>
-                                        <h5 class="mdl-typography--title">Bodyweight</h5>
-                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="weight-div">     
 
-                                            <input class="mdl-textfield__input" id="bodyweightTotal" type="text" name="rm-weight" value="" onchange="calc1RM();" onkeypress="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();" />
-                                            <label class="mdl-textfield__label" for="rm-weight">Total</label>
-                                        </div>
-
-                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="reps-div">
-                                            <input class="mdl-textfield__input" id="bodyweightWilks" type="text" name="rm-reps" value="" onchange="calc1RM();"    onkeypress="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();" />
-                                            <label class="mdl-textfield__label" for="rm-reps">Wilks</label>
-                                        </div>
-
-                                        <label class="labels"><strong>Bodyweight: </strong><span id="bTotalWeight">0</span></label>
-                                    </form>
-                                </div>
-                            </div>
-                        <div class="mdl-cell mdl-cell--5-col"></div>
-                    </div>
-                </div>
-            </section>
         </main>
     </div>
     
