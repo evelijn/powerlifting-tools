@@ -1,0 +1,23 @@
+{
+  "name": "powerlifting-tools",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evelijn/powerlifting-tools.git"
+  },
+  "keywords": [],
+  "author": "Evelijn Saaltink <evelijnsaaltink@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evelijn/powerlifting-tools/issues"
+  },
+  "homepage": "https://github.com/evelijn/powerlifting-tools#readme",
+  "dependencies": {
+    "wilks-calculator": "^1.2.1"
+  }
+}
