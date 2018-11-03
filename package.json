@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "nyc --reporter=html mocha --reporter spec",
+    "test": "nyc --reporter=html mocha ./src/**/*.spec.js --reporter spec",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
