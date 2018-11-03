@@ -23,6 +23,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^0.5.4",
     "chai": "^4.2.0",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0"
   }
 }
