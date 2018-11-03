@@ -19,5 +19,8 @@
   "homepage": "https://github.com/evelijn/powerlifting-tools#readme",
   "dependencies": {
     "wilks-calculator": "^1.2.1"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^0.5.4"
   }
 }
